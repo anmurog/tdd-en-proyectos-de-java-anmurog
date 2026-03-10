@@ -2,11 +2,16 @@ package com.tt1.test;
 
 import java.util.List;
 
+/**
+ * Capa de acceso a datos que interactúa con la base de datos simulada (DBStub).
+ * Proporciona métodos para gestionar las tareas y los emails.
+ */
+
 public class Repositorio implements IRepositorio{
 	
 	private IDBStub db;
 
-    public Repositorio(IDBStub db) {
+    public Repositorio(DBStub db) {
         this.db = db;
     }
 
@@ -14,7 +19,12 @@ public class Repositorio implements IRepositorio{
     public ToDo encontrarToDo(Integer id) {
         return db.findToDo(id);
     }
-
+    
+    /**
+     * Marca una tarea específica como completada en la base de datos.
+     * * @param id El identificador de la tarea que se desea completar.
+     */
+    
     @Override
     public void marcarComoCompletado(Integer id) {
         ToDo todo = db.findToDo(id);

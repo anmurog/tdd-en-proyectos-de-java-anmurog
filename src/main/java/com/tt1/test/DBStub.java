@@ -2,6 +2,12 @@ package com.tt1.test;
 
 import java.util.*;
 
+/**
+ * Emula el comportamiento de una base de datos en memoria para el sistema.
+ * Almacena internamente una colección de tareas (ToDos) y una agenda 
+ * de correos electrónicos.
+ */
+
 public class DBStub implements IDBStub{
     
 	private Map<Integer, ToDo> tablaToDos = new HashMap<>();

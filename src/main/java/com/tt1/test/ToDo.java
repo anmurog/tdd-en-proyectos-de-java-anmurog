@@ -1,6 +1,11 @@
 package com.tt1.test;
 import java.time.LocalDate;
 
+/**
+ * Clase que representa una tarea pendiente.
+ * Almacena la información básica de una tarea
+ */
+
 public class ToDo {
 	private Integer id;
     private String nombre;
