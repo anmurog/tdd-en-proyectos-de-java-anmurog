@@ -24,12 +24,15 @@ jobs:
           distribution: 'temurin'
 
       - name: Generar Javadoc con Maven
+        # AJUSTE: Si tu pom.xml está dentro de una carpeta, Maven lo buscará ahí
         run: mvn javadoc:javadoc -DskipTests
+        working-directory: ./tdd-en-proyectos-de-java-anmurog 
 
       - name: Subir a GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'target/site/apidocs'
+          # AJUSTE: También cambiamos la ruta de subida
+          path: 'tdd-en-proyectos-de-java-anmurog/target/site/apidocs'
 
       - name: Desplegar
         uses: actions/deploy-pages@v4
